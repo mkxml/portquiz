@@ -1,16 +1,22 @@
-#  [![Build Status](https://secure.travis-ci.org/mkautzmann/portquiz.png?branch=master)](http://travis-ci.org/mkautzmann/portquiz)
+# portquiz [![Build Status](https://secure.travis-ci.org/mkautzmann/portquiz.png?branch=master)](http://travis-ci.org/mkautzmann/portquiz)
 
-> Node module to check for open outbound TCP ports.
+> A Node.JS CLI tool to check for open outbound TCP ports.
 
+
+## Objective
+
+This is a Node CLI tool based on [http://portquiz.net](http://portquiz.net) to test for open outbound ports in your computer.
+
+This is particularly useful when you're trying to debug connection to other web
+services or when you are trying to find a nice port to place some service you
+are deploying.
 
 ## Getting Started
 
-Install the module with: `npm install portquiz`
+Install the module with: `npm install -g portquiz`
 
-```js
-var portquiz = require('portquiz');
-portquiz.awesome(); // "awesome"
-```
+This is a global and independent module so run it from your console and check
+the results.
 
 Install with cli command
 
@@ -20,12 +26,13 @@ $ portquiz --help
 $ portquiz --version
 ```
 
+If you're having permissions problems try using sudo for root privileges:
 
-
-
-## Documentation
-
-_(Coming soon)_
+```sh
+$ sudo npm install -g portquiz
+$ portquiz --help
+$ portquiz --version
+```
 
 
 ## Examples
