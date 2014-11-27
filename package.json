@@ -1,6 +1,6 @@
 {
   "name": "portquiz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/portquiz.js",
   "description": "Node module to check for open outbound TCP ports.",
   "homepage": "https://github.com/mkautzmann/portquiz",
@@ -41,7 +41,7 @@
     "test": "grunt"
   },
   "bin": {
-    "portquiz": "cli.js"
+    "portquiz": "main.js"
   },
   "engines": {
     "node": ">=0.10.3"
