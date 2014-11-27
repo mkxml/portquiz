@@ -1,16 +1,14 @@
 {
   "name": "portquiz",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/portquiz.js",
   "description": "Node module to check for open outbound TCP ports.",
-  
-      "homepage": "https://github.com/mkautzmann/portquiz",
-    
-    "bugs": "https://github.com/mkautzmann/portquiz/issues",
+  "homepage": "https://github.com/mkautzmann/portquiz",
+  "bugs": "https://github.com/mkautzmann/portquiz/issues",
   "author": {
     "name": "Matheus Kautzmann",
-    "email": "kautzmann5@gmail.com"  ,
-        "url": "https://twitter.com/m_kautzmann" 
+    "email": "kautzmann5@gmail.com",
+    "url": "https://twitter.com/m_kautzmann"
   },
   "repository": {
     "type": "git",
@@ -21,14 +19,13 @@
     "lib"
   ],
   "keywords": [
-    "portquiz"  ,
-        "portquiz"  ,
-        " port"  ,
-        " tcp"  ,
-        " outbound"  ,
-        " check ports"  ,
-        " network check"  ,
-        " firewall" 
+    "portquiz",
+    " port",
+    " tcp",
+    " outbound",
+    " check ports",
+    " network check",
+    " firewall"
   ],
   "devDependencies": {
     "grunt-contrib-jshint": "^0.10.0",
@@ -37,13 +34,21 @@
     "load-grunt-tasks": "^0.4.0",
     "time-grunt": "^0.3.1",
     "grunt-mocha-cli": "^1.9.0",
-    "jshint-stylish": "^0.2.0" 
+    "chai": "^1.10.0",
+    "jshint-stylish": "^0.2.0"
   },
   "scripts": {
-    "test": "grunt" 
-  }  ,
-      "bin": {
-        "portquiz": "cli.js"
-    },
-    "preferGlobal": "true" 
+    "test": "grunt"
+  },
+  "bin": {
+    "portquiz": "cli.js"
+  },
+  "engines": {
+    "node": ">=0.10.3"
+  },
+  "preferGlobal": "true",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "commander": "^2.5.0"
+  }
 }
