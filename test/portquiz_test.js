@@ -2,6 +2,7 @@
 
 "use strict";
 var expect = require("chai").expect,
+  sinon = require("sinon"),
   portquiz = require("../lib/portquiz.js");
 
 describe("portquiz", function() {
@@ -39,6 +40,35 @@ describe("portquiz", function() {
       function() {
         done();
       });
+    });
+  });
+
+  describe("when testing with a range of ports", function(){
+    it("should check if the start argument is a valid number", function(){
+      expect(function(){
+        portquiz.checkRange("test", 2);
+      }).to.throw("The start and end arguments must be a valid number");
+    });
+    it("should check if the end argument is a valid number", function(){
+      expect(function(){
+        portquiz.checkRange(2, "test");
+      }).to.throw("The start and end arguments must be a valid number");
+    });
+    it("should check if the range is valid and the start port is lower than the end port", function(){
+      expect(function(){
+        portquiz.checkRange(2, 1);
+      }).to.throw("You must provide a valid range");
+    });
+    it("should report successful the ports that are available", function(done){
+      portquiz.checkRange(443, 444, function(){
+        done();
+      });
+    });
+    it("should hide the errors", function(){
+      var callback = sinon.spy();
+      portquiz.checkRange(22, 25, function(){
+        expect(callback.called).to.be.true();
+      }, callback);
     });
   });
 });
