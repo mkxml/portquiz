@@ -37,6 +37,6 @@ if(program.port) {
     console.log(e.toString());
   }
 }
-
-
-console.log("You must specify a port or range, use --help for assistance".green);
+else {
+  console.log("You must specify a port or range, use --help for assistance".green);
+}
