@@ -11,7 +11,9 @@ var portquiz = require("./lib/portquiz");
 
 program
   .version(require("./package").version)
-  .option("-p, --port <n>", "check an specific port number");
+  .option("-p, --port <n>", "check an specific port number")
+  .option("-s, --start <n>", "start port to use when checking for range")
+  .option("-e, --end <n>", "end port to use when checking for range");
 
 program.on('--help', function(){
   console.log("  This software tests for outbound port connection".blue);
@@ -25,11 +27,9 @@ program.parse(process.argv);
 
 if(program.port) {
   try {
-    portquiz.checkPort(parseInt(program.port, 10)
-    , function(port){
+    portquiz.checkPort(parseInt(program.port, 10), function(port){
       console.log("You can reach services on TCP port " + port + "!");
-    }
-    , function(err){
+    }, function(err){
       console.log(err);
     });
   }
@@ -37,6 +37,16 @@ if(program.port) {
     console.log(e.toString());
   }
 }
+else if(program.start && program.end) {
+  try {
+    portquiz.checkRange(parseInt(program.start, 10), parseInt(program.end, 10), function(msg){
+      console.log(msg.green);
+    })
+  }
+  catch(e) {
+    console.log(e.toString());
+  }
+}
 else {
-  console.log("You must specify a port or range, use --help for assistance".green);
+  console.log("You must specify a port OR range, use --help for assistance".green);
 }
