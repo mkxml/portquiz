@@ -8,9 +8,10 @@
 var program = require("commander");
 var colors = require("colors");
 var portquiz = require("./lib/portquiz");
+var pkg = require("./package");
 
 program
-  .version(require("./package").version)
+  .version(pkg.version)
   .option("-p, --port <n>", "check an specific port number")
   .option("-s, --start <n>", "start port to use when checking for range")
   .option("-e, --end <n>", "end port to use when checking for range");
@@ -28,7 +29,8 @@ program.parse(process.argv);
 if(program.port) {
   try {
     portquiz.checkPort(parseInt(program.port, 10), function(port){
-      console.log("You can reach services on TCP port " + port + "!".green);
+      var msg = "You can reach services on TCP port " + port + "!";
+      console.log(msg.green);
     }, function(err){
       console.log(err.red);
     });
