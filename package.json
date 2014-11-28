@@ -1,6 +1,6 @@
 {
   "name": "portquiz",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/portquiz.js",
   "description": "Node module to check for open outbound TCP ports.",
   "homepage": "https://github.com/mkautzmann/portquiz",
@@ -16,7 +16,8 @@
   },
   "license": "MIT",
   "files": [
-    "lib"
+    "lib",
+    "main.js"
   ],
   "keywords": [
     "portquiz",
