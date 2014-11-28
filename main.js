@@ -28,13 +28,13 @@ program.parse(process.argv);
 if(program.port) {
   try {
     portquiz.checkPort(parseInt(program.port, 10), function(port){
-      console.log("You can reach services on TCP port " + port + "!");
+      console.log("You can reach services on TCP port " + port + "!".green);
     }, function(err){
-      console.log(err);
+      console.log(err.red);
     });
   }
   catch(e) {
-    console.log(e.toString());
+    console.log(e.toString().red);
   }
 }
 else if(program.start && program.end) {
@@ -44,7 +44,7 @@ else if(program.start && program.end) {
     })
   }
   catch(e) {
-    console.log(e.toString());
+    console.log(e.toString().red);
   }
 }
 else {
