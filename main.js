@@ -9,6 +9,9 @@ var program = require("commander");
 var colors = require("colors");
 var portquiz = require("./lib/portquiz");
 var pkg = require("./package");
+var updateNotifier = require("update-notifier");
+
+updateNotifier({packageName: pkg.name, packageVersion: pkg.version}).notify();
 
 program
   .version(pkg.version)

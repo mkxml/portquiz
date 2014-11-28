@@ -51,6 +51,7 @@
   "preferGlobal": "true",
   "dependencies": {
     "colors": "^1.0.3",
-    "commander": "^2.5.0"
+    "commander": "^2.5.0",
+    "update-notifier": "^0.2.2"
   }
 }
