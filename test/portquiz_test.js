@@ -60,7 +60,7 @@ describe("portquiz", function() {
       }).to.throw("You must provide a valid range");
     });
     it("should report successful the ports that are available", function(done){
-      portquiz.checkRange(443, 444, function(){
+      portquiz.checkRange(80, 81, function(){
         done();
       });
     });
